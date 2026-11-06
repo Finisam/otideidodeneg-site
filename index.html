@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>От идеи до денег — командная игра о сильных сторонах</title>
+<meta name="description" content="Командная игра: четыре роли вместе ведут идею к проекту. Монеты в игре — игровые голоса. Заработок не обещаем.">
+<meta name="theme-color" content="#07130E">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="От идеи до денег — командная игра">
+<meta property="og:description" content="Соедините сильные стороны команды и превратите идею в проект.">
+<meta property="og:url" content="https://otideidodeneg.com/">
+<meta property="og:image" content="https://otideidodeneg.com/assets/og.png">
+<link rel="canonical" href="https://otideidodeneg.com/">
+<link rel="preload" href="fonts/old-standard-tt-700-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/pt-sans-400-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="extra.css">
+<script>
+  document.documentElement.classList.add('js');
+  /* Если script.js не загрузится, контент всё равно появится. */
+  setTimeout(function(){ if(!window.siteReady) document.documentElement.classList.remove('js'); }, 2000);
+</script>
+<script src="site-config.js" defer></script>
+<script src="script.js" defer></script>
+<script src="extra.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Перейти к содержанию</a>
+<div class="progress" aria-hidden="true"><span></span></div>
+
+<header class="bar">
+  <div class="bar__in">
+    <a class="logo" href="#top"><img src="assets/favicon.svg" alt="" width="36" height="36">От идеи до денег</a>
+    <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav"><span aria-hidden="true">☰</span></button>
+    <nav class="nav" id="nav" aria-label="Разделы">
+      <a href="#about">Об игре</a>
+      <a href="#roles">Роли</a>
+      <a href="#steps">Как проходит</a>
+      <a href="#coins">Монеты</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#pay">Оплата</a>
+      <a class="nav__join" href="#join">Участвовать</a>
+    </nav>
+    <a class="pill" href="#join">Участвовать</a>
+  </div>
+</header>
+
+<main id="main">
+  <!-- B. Первый экран: купюра в монетном дворе -->
+  <section class="hero" id="top">
+    <canvas class="rosette" id="rosette" aria-hidden="true"></canvas>
+    <div class="hero__glow" aria-hidden="true"></div>
+    <canvas class="dust" id="dust" aria-hidden="true"></canvas>
+    <div class="stage">
+      <div class="note" id="note">
+        <div class="note__paper paperzone">
+          <img class="note__guil" data-parallax="-0.05" src="assets/guilloche-paper.svg" alt="" width="760" height="760">
+          <span class="corner corner--tl" aria-hidden="true"><img src="assets/corner.svg" alt="" width="92" height="92"><b>4</b></span>
+          <span class="corner corner--tr" aria-hidden="true"><img src="assets/corner.svg" alt="" width="92" height="92"><b>4</b></span>
+          <span class="corner corner--bl" aria-hidden="true"><img src="assets/corner.svg" alt="" width="92" height="92"><b>4</b></span>
+          <span class="corner corner--br" aria-hidden="true"><img src="assets/corner.svg" alt="" width="92" height="92"><b>4</b></span>
+          <span class="serial" aria-hidden="true">ОД · 1 → 2 → 3 → 4</span>
+
+          <div class="copy">
+            <p class="eyebrow">Командная игра</p>
+            <h1><span class="ln"><span>От идеи до</span></span> <span class="ln"><span class="gold-word">денег</span></span></h1>
+            <p class="lead">Соедините сильные стороны команды и&nbsp;превратите идею в&nbsp;проект.</p>
+            <p class="sub">Не нужно уметь всё самому: четыре роли вместе ведут идею по кругу. Монеты здесь игровые, это голоса. Заработок мы не обещаем.</p>
+            <div class="actions">
+              <a class="coin" href="#join"><span class="coin__face"><span class="coin__shine"></span><span class="coin__label">Участвовать</span></span></a>
+              <a class="coin coin--sm" href="#about"><span class="coin__face"><span class="coin__shine"></span><span class="coin__label">Об игре</span></span></a>
+              <p class="hint">Анкета на 5–7&nbsp;минут</p>
+            </div>
+          </div>
+
+          <div class="medal">
+            <img src="assets/medal.svg" alt="" width="420" height="500">
+            <svg viewBox="0 0 420 500" role="img" aria-label="Эмблема игры: четыре роли по часовой стрелке. Идея, структура, действие, доход.">
+              <g fill="#173C2B" stroke="#F7E4A3" stroke-opacity=".55">
+                <rect class="q q1" x="96" y="134" width="110" height="110" rx="7"/><rect class="q q2" x="214" y="134" width="110" height="110" rx="7"/>
+                <rect class="q q3" x="214" y="256" width="110" height="110" rx="7"/><rect class="q q4" x="96" y="256" width="110" height="110" rx="7"/>
+              </g>
+              <g text-anchor="middle" font-family="Old Standard TT,Times New Roman,serif" font-weight="700" font-size="40" fill="#D4AF37">
+                <text x="151" y="186">1</text><text x="269" y="186">2</text><text x="269" y="326">3</text><text x="151" y="326">4</text>
+              </g>
+              <g text-anchor="middle" font-family="PT Sans,Arial,sans-serif" font-weight="700" font-size="20.5" fill="#F3EEDC">
+                <text x="151" y="213">Идея</text><text x="269" y="213">Структура</text><text x="269" y="350">Действие</text><text x="151" y="350">Доход</text>
+              </g>
+              <circle cx="210" cy="250" r="27" fill="#D4AF37" stroke="#F3EEDC" stroke-width="3"/>
+              <circle cx="210" cy="250" r="21" fill="none" stroke="#6B4A0F" stroke-width="1.2" stroke-dasharray="1.5 3"/>
+              <g class="cyc">
+                <path d="M198.5 250a11.5 11.5 0 1 1 4.4 9.1" fill="none" stroke="#2E2004" stroke-width="2.8" stroke-linecap="round"/>
+                <path d="M197.6 262l5.3-3.6.9 6.2z" fill="#2E2004" stroke="#2E2004" stroke-width="1.4" stroke-linejoin="round"/>
+              </g>
+            </svg>
+          </div>
+          <p class="legal"><span>Игровое оформление. Это не деньги и не платёжное средство.</span></p>
+          <span class="foil" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- C. Не нужно уметь всё самому -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <h2 class="reveal">Не нужно уметь всё самому</h2>
+      <p class="big" data-words>Придумать, выстроить, сделать и заработать — это разные умения. В игре вы работаете там, где сильны, а остальное закрывают другие участники команды.</p>
+      <div class="duo reveal stagger">
+        <article class="panel spot">
+          <div class="tiles" aria-hidden="true"><i class="lit"></i><i></i><i></i><i></i></div>
+          <div>
+            <h3>Когда человек один</h3>
+            <p>Он тянет весь проект сам. Там, где сил меньше, дело останавливается.</p>
+          </div>
+        </article>
+        <article class="panel panel--on spot">
+          <div class="tiles" aria-hidden="true"><i class="lit"></i><i class="lit"></i><i class="lit"></i><i class="lit"></i></div>
+          <div>
+            <h3>Когда работает команда</h3>
+            <p>Каждый вносит свою часть и передаёт результат следующему. Видно, зачем проекту нужны другие люди.</p>
+          </div>
+        </article>
+      </div>
+      <dl class="stats reveal">
+        <div><dd data-count="4">4</dd><dt>роли в команде</dt></div>
+        <div><dd data-count="1">1</dd><dt>общий цикл</dt></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- D. Четыре роли — один проект -->
+  <section class="section section--deep" id="roles">
+    <div class="wrap roles reveal">
+      <div>
+        <h2>Четыре роли — один проект</h2>
+        <p>Каждая роль отвечает за свою часть пути и передаёт результат следующей. Выберите роль, чтобы прочитать о ней.</p>
+        <p class="note-small">Это авторская игровая методика. Сайт не определяет вашу роль.</p>
+      </div>
+      <div class="field">
+        <div class="quad">
+          <button class="role" type="button" aria-expanded="true" aria-controls="detail" data-step="1" data-text="Креатор предлагает идею и ясно её формулирует."><i>1</i><b>Креатор</b><small>идея</small></button>
+          <button class="role" type="button" aria-expanded="false" aria-controls="detail" data-step="2" data-text="Архитектор выстраивает структуру: из чего состоит решение и как оно устроено."><i>2</i><b>Архитектор</b><small>структура</small></button>
+          <button class="role" type="button" aria-expanded="false" aria-controls="detail" data-step="4" data-text="Монетизатор продумывает, как результат может приносить доход."><i>4</i><b>Монетизатор</b><small>доход</small></button>
+          <button class="role" type="button" aria-expanded="false" aria-controls="detail" data-step="3" data-text="Энергет переводит обсуждение в конкретные действия."><i>3</i><b>Энергет</b><small>действие</small></button>
+          <span class="hub" aria-hidden="true"><span class="hub__needle"></span></span>
+        </div>
+        <p class="detail" id="detail" aria-live="polite">Креатор предлагает идею и ясно её формулирует.</p>
+        <ol class="route" aria-label="Маршрут проекта">
+          <li data-step="1" class="on">Идея</li><li data-step="2">Структура</li><li data-step="3">Действие</li><li data-step="4">Монетизация</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <div class="ribbon" aria-hidden="true"><div class="ribbon__in"><span>Идея ✦ Структура ✦ Действие ✦ Монетизация ✦ Идея ✦ Структура ✦ Действие ✦ Монетизация ✦&nbsp;</span><span>Идея ✦ Структура ✦ Действие ✦ Монетизация ✦ Идея ✦ Структура ✦ Действие ✦ Монетизация ✦&nbsp;</span></div></div>
+
+  <!-- E. Как проходит участие. Длительность игры и площадки добавить после подтверждения. -->
+  <section class="section section--paper paperzone" id="steps">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2>Как проходит участие</h2>
+        <p>Анкета нужна, чтобы собрать команду из людей, которые дополняют друг друга.</p>
+      </div>
+      <ol class="steps" id="track">
+        <li><span class="n">1</span><h3>Анкета</h3><p>5–7 минут: ваш реальный опыт, навыки и отношение к работе в команде.</p></li>
+        <li><span class="n">2</span><h3>Роль и команда</h3><p>Роль и состав определяют люди по авторской методике.</p></li>
+        <li><span class="n">3</span><h3>Игровая сессия</h3><p>Команда ведёт идею по циклу из четырёх ролей.</p></li>
+        <li><span class="n">4</span><h3>Итог</h3><p>Участники голосуют за проекты игровыми монетами.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- F. Что вы попробуете -->
+  <section class="section" id="gets">
+    <div class="wrap">
+      <div class="head reveal"><h2>Что вы попробуете</h2></div>
+      <div class="three reveal stagger">
+        <article class="panel panel--col spot"><h3>Работать на своей сильной стороне</h3><p>Делать свою часть, пока другие закрывают остальное.</p></article>
+        <article class="panel panel--col spot"><h3>Сформулировать идею</h3><p>Сказать о ней так, чтобы команда могла её подхватить.</p></article>
+        <article class="panel panel--col spot"><h3>Собрать структуру проекта</h3><p>Увидеть, как идея проходит через все четыре роли.</p></article>
+      </div>
+      <p class="note-small">Игра даёт опыт совместной работы. Доход и результат бизнеса она не гарантирует.</p>
+    </div>
+  </section>
+
+  <!-- G. Игровые монеты -->
+  <section class="section section--deep vault" id="coins">
+    <div class="wrap">
+      <div class="coins reveal">
+        <div class="flipwrap">
+          <button class="flip" type="button" aria-pressed="false" aria-label="Повернуть монету">
+            <span class="flip__in"><span class="flip__sway" id="coin3d">
+              <span class="flip__side coin coin--demo"><span class="coin__face"><span class="coin__label">Игровая монета</span></span></span>
+              <span class="flip__side flip__side--back coin coin--demo"><span class="coin__face"><span class="coin__label">Игровой голос</span></span></span>
+            </span></span>
+          </button>
+          <p class="flip__hint">Нажмите на монету</p>
+        </div>
+        <div>
+          <h2>Монеты в игре — это голоса</h2>
+          <p>В итоге участники отдают игровые монеты проектам, которые им понравились. Так команда видит отклик на свою работу.</p>
+          <p>Это не деньги, не инвестиции и не выигрыш. Настоящих платежей в голосовании нет.</p>
+        </div>
+      </div>
+      <!-- Авторское дополнение: демонстрация голосования, чисел игры не содержит. -->
+      <div class="vote reveal">
+        <p class="vote__t">Попробуйте: нажмите на проект и отдайте ему монету</p>
+        <div class="vote__row">
+          <button class="pile" type="button" data-name="Проект А"><span class="pile__stack"></span><b>Проект А</b><small>0 монет</small></button>
+          <button class="pile" type="button" data-name="Проект Б"><span class="pile__stack"></span><b>Проект Б</b><small>0 монет</small></button>
+          <button class="pile" type="button" data-name="Проект В"><span class="pile__stack"></span><b>Проект В</b><small>0 монет</small></button>
+        </div>
+        <p class="note-small" id="voteLive" aria-live="polite">Это демонстрация на сайте. Настоящее голосование проходит в игре.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- H. Вопросы. Ответы проверяет Alex. Вопрос «Нужна ли готовая идея?» ждёт ответа и пока не показан. -->
+  <section class="section" id="faq">
+    <div class="wrap faq reveal">
+      <h2>Частые вопросы</h2>
+      <details><summary>Кому подходит игра?</summary><p>Тем, кому интересно работать с другими людьми по общим правилам: договариваться, держать сроки и передавать результат следующему.</p></details>
+      <details><summary>Как попасть в игру?</summary><p>Через анкету. Начать можно в разделе «Участвовать».</p></details>
+      <details><summary>Как определяется роль?</summary><p>По авторской игровой методике. Это часть игры, а не научная оценка личности. Сайт роль не определяет.</p></details>
+      <details><summary>Монеты настоящие?</summary><p>Нет. Это игровые голоса, настоящих денег в них нет.</p></details>
+      <details><summary>Сколько стоит участие и когда ближайшая игра?</summary><p>Участие платное. Дату и стоимость мы сообщаем лично, на этом сайте их пока нет.</p></details>
+    </div>
+  </section>
+
+  <!-- I. Участие. Ссылки меняются в site-config.js. -->
+  <section class="section join" id="join">
+    <div class="rays" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="joinnote reveal">
+        <div class="paperzone joinnote__in">
+          <div>
+            <h2>Участвовать</h2>
+            <p id="joinText">Заполните анкету: 5–7 минут. После неё мы свяжемся с вами. Участие платное, дату и стоимость сообщим лично.</p>
+            <p class="note-small" id="joinAlt">Есть вопрос? <a href="https://t.me/keysgenius" target="_blank" rel="noopener noreferrer">Напишите в Telegram</a></p>
+          </div>
+          <!-- Ссылка рабочая и без JavaScript. При смене анкеты поменять и здесь, и в site-config.js. -->
+          <a class="coin coin--big" id="joinCoin" href="https://docs.google.com/forms/d/e/1FAIpQLSeuo_9lGWbz59SiK3eUG3fnvXI5LDHNMLN9OTRx-Bgc0_T9eg/viewform" target="_blank" rel="noopener noreferrer"><span class="coin__face"><span class="coin__shine"></span><span class="coin__label" id="joinCoinLabel">Анкета</span></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- K. Оплата. ЗАГЛУШКА: реквизиты и способы оплаты добавить только после подтверждения владельцем. -->
+  <section class="section section--paper pay" id="pay">
+    <div class="wrap">
+      <div class="reveal">
+        <h2>Оплата участия</h2>
+        <p>Реквизиты и способы оплаты скоро появятся здесь. Сначала заполните анкету, после неё мы свяжемся с вами и подскажем, как оплатить.</p>
+        <ul class="paylist">
+          <li><b>Получатель:</b> <span class="ph">будет указан</span></li>
+          <li><b>Банковский перевод:</b> <span class="ph">реквизиты скоро</span></li>
+          <li><b>Банковская карта:</b> <span class="ph">скоро</span></li>
+          <li><b>Другие способы:</b> <span class="ph">уточняются</span></li>
+        </ul>
+        <p class="note-small">Вопрос по оплате? <a href="https://t.me/keysgenius" target="_blank" rel="noopener noreferrer">Напишите в Telegram</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- J. Подвал. Организатора и реквизиты добавить только после подтверждения. -->
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot__mark" aria-hidden="true">От идеи до денег</p>
+    <div class="foot__in">
+      <p class="foot__name">От идеи до денег</p>
+      <p>Командная игра. Заработок не гарантируется. Монеты игровые.</p>
+      <p id="organizer" hidden></p>
+    </div>
+  </div>
+</footer>
+
+<canvas class="fx" id="fx" aria-hidden="true"></canvas>
+<a class="coin coin--top" href="#top" aria-label="Наверх" hidden><span class="coin__face"><span class="coin__label" aria-hidden="true">↑</span></span></a>
+</body>
+</html>

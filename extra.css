@@ -1,0 +1,61 @@
+/* Слой оживления (06.11): мягкое золотое свечение, плавное движение, без резких эффектов.
+   Всё отключается при prefers-reduced-motion. Основной стиль не меняется. */
+.fx-bokeh,.fx-light{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
+.fx-bokeh{z-index:6;opacity:.9}
+.fx-light{z-index:5;background:radial-gradient(520px circle at var(--lx,50%) var(--ly,40%),rgba(247,228,163,.11),rgba(247,228,163,.04) 38%,transparent 70%);opacity:0;transition:opacity 1.2s ease}
+.fx-light.on{opacity:1}
+
+/* Медальон и монеты в первом экране мягко «дышат» (отдельное свойство translate, не мешает наклону за мышью) */
+.medal{animation:fxbob 9s ease-in-out infinite}
+.hero .coin{animation:fxbob 7s ease-in-out infinite}
+.hero .coin--sm{animation-duration:8.5s;animation-delay:-2.5s}
+@keyframes fxbob{0%,100%{translate:0 0}50%{translate:0 -7px}}
+
+/* Заголовки: тёплый блик медленно проходит по золотому тексту */
+.section:not(.section--paper) h2{
+  background:linear-gradient(100deg,#F7E4A3 0,#F7E4A3 38%,#FFF7D6 50%,#F7E4A3 62%,#F7E4A3 100%);
+  background-size:260% 100%;background-position:100% 0;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  animation:fxsheen 14s ease-in-out infinite alternate}
+@keyframes fxsheen{to{background-position:0 0}}
+
+/* Карточки и роли мягко приподнимаются */
+.panel,.role,.pile,.step,.card{transition:translate .5s var(--ease),box-shadow .5s ease,border-color .5s ease}
+@media (hover:hover){
+  .panel:hover,.role:hover,.pile:hover{translate:0 -4px;box-shadow:0 14px 34px rgba(0,0,0,.35),0 0 0 1px rgba(212,175,55,.35),0 0 28px rgba(212,175,55,.12)}
+}
+
+/* Золотые искры при нажатии на монету */
+.fx-spark{position:fixed;z-index:80;width:7px;height:7px;margin:-3.5px 0 0 -3.5px;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle at 35% 30%,#FFF7D6,#F7E4A3 45%,#D4AF37 80%);box-shadow:0 0 8px rgba(247,228,163,.8);
+  animation:fxspark 1.1s cubic-bezier(.2,.7,.3,1) forwards}
+@keyframes fxspark{from{opacity:1;transform:translate(0,0) scale(1)}to{opacity:0;transform:translate(var(--dx),var(--dy)) scale(.2)}}
+
+/* Мягкий золотой «дождь» монет в разделе про голоса */
+.hero,.section{overflow:clip}
+.fx-rain{position:absolute;inset:0;pointer-events:none;z-index:1;perspective:700px}
+.fx-coin{position:absolute;top:-70px;left:var(--x);width:var(--s);height:var(--s);border-radius:50%;opacity:0;
+  background:radial-gradient(circle at 38% 30%,#FFF4C4 0,#F2D77A 28%,#D4AF37 62%,#8F6A17 100%);
+  box-shadow:inset 0 0 0 2px rgba(255,244,196,.5),inset 0 0 0 5px rgba(137,96,25,.35),0 4px 14px rgba(0,0,0,.35);
+  animation:fxfall var(--d) linear var(--w) infinite;animation-play-state:paused}
+.fx-rain.go .fx-coin{animation-play-state:running}
+@keyframes fxfall{
+  0%{opacity:0;transform:translate3d(0,0,0) rotateY(0) rotateZ(0)}
+  8%{opacity:.6}
+  50%{transform:translate3d(var(--sw),55vh,0) rotateY(540deg) rotateZ(18deg)}
+  92%{opacity:.5}
+  100%{opacity:0;transform:translate3d(calc(var(--sw)*-.4),112vh,0) rotateY(1080deg) rotateZ(-12deg)}}
+.section .wrap{position:relative;z-index:2}
+
+@media (prefers-reduced-motion:reduce){
+  .fx-bokeh,.fx-light,.fx-rain,.fx-spark{display:none}
+  .medal,.hero .coin,.section:not(.section--paper) h2{animation:none}
+  .section:not(.section--paper) h2{-webkit-text-fill-color:var(--gold-light);background:none;color:var(--gold-light)}
+  .panel,.role,.pile{transition:none}
+}
+
+/* Заглушка оплаты */
+.pay h2{margin-bottom:.5em}
+.paylist{list-style:none;padding:0;margin:1.2em 0;display:grid;gap:.6em;max-width:560px}
+.paylist li{padding:.8em 1em;border:1px dashed #1E4A36;border-radius:10px;background:rgba(30,74,54,.05)}
+.paylist .ph{opacity:.65;font-style:italic}
