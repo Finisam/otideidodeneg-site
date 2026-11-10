@@ -212,8 +212,8 @@ h3{font:700 24px/1.2 var(--serif);color:var(--gold-light);margin-bottom:8px}
 .flip[aria-pressed=true] .flip__in{transform:rotateY(540deg)}
 .flip__sway{animation:sway 7s ease-in-out infinite alternate}
 @keyframes sway{from{transform:rotateY(-26deg) rotateX(7deg)}to{transform:rotateY(26deg) rotateX(-5deg)}}
-.flip__side{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:translateZ(8px);box-shadow:none;transition:none}
-.flip__side--back{transform:rotateY(180deg) translateZ(8px)}
+.flip__side{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:translateZ(17px);box-shadow:none;transition:none}
+.flip__side--back{transform:rotateY(180deg) translateZ(17px)}
 .edge{position:absolute;inset:0;border-radius:50%;background:repeating-conic-gradient(#7E5A14 0 2.5deg,#D8B95F 2.5deg 5deg)}
 .coin--demo{--d:250px;--fs:25px;cursor:inherit}
 .coin--demo .coin__label{max-width:6.5em}

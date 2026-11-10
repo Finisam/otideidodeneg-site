@@ -87,6 +87,15 @@
       var rain = document.createElement('div'); rain.className = 'fx-rain'; rain.setAttribute('aria-hidden', 'true');
       for (var i = 0; i < n; i++) {
         var c = document.createElement('i'); c.className = 'fx-coin';
+      // Rotate a separate solid body: opacity on the falling wrapper must not flatten its rim.
+      var solid = document.createElement('span'); solid.className = 'fx-coin__body';
+      for (var z = -3; z <= 3; z++) {
+        var rim = document.createElement('span'); rim.className = 'fx-coin__rim';
+        rim.style.transform = 'translateZ(' + z + 'px)'; solid.appendChild(rim);
+      }
+      var front = document.createElement('span'); front.className = 'fx-coin__face';
+      var back = document.createElement('span'); back.className = 'fx-coin__face fx-coin__face--back';
+      solid.appendChild(front); solid.appendChild(back); c.appendChild(solid);
         c.style.setProperty('--x', (3 + Math.random() * 94).toFixed(1) + '%');
         c.style.setProperty('--s', (22 + Math.random() * 22).toFixed(0) + 'px');
         c.style.setProperty('--d', (11 + Math.random() * 9).toFixed(1) + 's');

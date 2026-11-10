@@ -80,7 +80,7 @@
   /* Объёмная монета */
   (function () {
     var f = $('.flip'), body = $('#coin3d');
-    for (var i = -6; i <= 6; i++) {
+    for (var i = -16; i <= 16; i++) {
       var e = document.createElement('i');
       e.className = 'edge';
       e.style.transform = 'translateZ(' + i + 'px)';
